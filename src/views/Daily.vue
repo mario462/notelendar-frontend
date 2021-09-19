@@ -12,19 +12,19 @@
               <ul>
                 <li><strong>Summary:</strong> {{ event.summary }}</li>
                 <li><strong>Status:</strong> {{ event.status }}</li>
-                <li><strong>Start:</strong> {{ event.start.dateTime }}</li>
-                <li><strong>End:</strong> {{ event.end.dateTime }}</li>
+                <li><strong>Start:</strong> {{ event.start.date_time }}</li>
+                <li><strong>End:</strong> {{ event.end.date_time }}</li>
                 <div v-for="attendee in event.attendees" :key="attendee.email">
                   <li>
                     <strong>Attendee:</strong> {{ attendee.email }}
-                    <a v-if="attendee.self"><strong>(You)</strong></a>
+                    <a v-if="attendee.is_self"><strong>(You)</strong></a>
                     <a v-if="attendee.organizer"
                       ><strong>(Organizer)</strong></a
                     >
                   </li>
                 </div>
                 <li>
-                  <a :href="event.htmlLink" target="_blank"
+                  <a :href="event.google_calendar_link" target="_blank"
                     >Open event in Google Calendar</a
                   >
                 </li>
@@ -34,9 +34,9 @@
                     >View event notes</router-link
                   >
                 </li>
-                <div v-if="event.hangoutLink">
+                <div v-if="event.google_meet_link">
                   <li>
-                    <a :href="event.hangoutLink" target="_blank">Join call</a>
+                    <a :href="event.google_meet_link" target="_blank">Join call</a>
                   </li>
                 </div>
               </ul>

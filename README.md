@@ -1,6 +1,6 @@
 # notelendar frontend
 
-Frontend for the notelendar app
+Frontend for the [notelendar app](https://github.com/mario462/notelendar)
 
 ## Project setup
 ```

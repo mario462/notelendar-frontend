@@ -28,17 +28,14 @@
                     >Open event in Google Calendar</a
                   >
                 </li>
-                <li>
-                  <router-link
-                    :to="{ name: 'Event Notes', params: { id: event.id } }"
-                    >View event notes</router-link
-                  >
-                </li>
                 <div v-if="event.google_meet_link">
                   <li>
                     <a :href="event.google_meet_link" target="_blank">Join call</a>
                   </li>
                 </div>
+                <li>
+                  <router-link :to="{name: 'Notes', params:{event_id: event.event_id}}">Notes</router-link>
+                </li>
               </ul>
             </div>
           </div>
